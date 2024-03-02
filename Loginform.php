@@ -31,7 +31,7 @@
             </div>
 
             <div class="form-group">
-                <a href="Account_Info.php" class="mr-2">Create Account</a>
+                <a href="CreateAccount.php" class="mr-2">Create Account</a>
                 <button type="submit" class="btn btn-primary">Login</button>
             </div>
 

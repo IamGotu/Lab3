@@ -71,9 +71,10 @@ if (
             VALUES ('$username', '$password', '$Lastname', '$First_name', '$Middle_name', '$Email', '$Status', '$Active', '$verify_token')";
 
     if (mysqli_query($conn, $sql)) {
+        
         // Send verification email
         $subject = "Email Verification";
-        $message = "Your verification code is: $verify_token";
+        $message = "Hello, $username. Your verification code is: $verify_token";
 
         // Create a PHPMailer instance
         $mail = new PHPMailer(true);
@@ -89,7 +90,7 @@ if (
             $mail->Port = 465;
 
             // Sender and recipient
-            $mail->setFrom('cocnambawan@gmail.com', $username);
+            $mail->setFrom('cocnambawan@gmail.com', 'Email Verification');
             $mail->addAddress($Email);
 
             // Email content

@@ -59,14 +59,14 @@
                 </div>
 
                 <div class="form-group">
-                    <a href="Loginform.php" class="mr-2">Login Account</a>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
 
             </form>
-
+                
         </div>
-
+        <?php include('footer.php'); ?>
     </body>
 
 </html>
+

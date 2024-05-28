@@ -64,7 +64,7 @@ if (
     }
 
     // Generate a unique verification token
-    $verify_token = bin2hex(random_bytes(16));
+    $verify_token = bin2hex(random_bytes(2));
 
     // SQL query to insert user data into the database with verification token
     $sql = "INSERT INTO user (username, password, Lastname, First_name, Middle_name, Email, Status, Active, verify_token)

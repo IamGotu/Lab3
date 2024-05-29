@@ -5,9 +5,16 @@ session_start();
 include "db_conn.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    function validate($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
     // Get the verification code and email from the form
-    $verification_code = $_POST['verification_code'];
-    $email = $_POST['email'];
+    $verification_code = validate ($_POST['verification_code']);
+    $email = validate ($_POST['email']);
 
     // SQL query to check if the verification code matches the one stored in the database
     $sql = "SELECT * FROM user WHERE Email='$email' AND verify_token='$verification_code' ";

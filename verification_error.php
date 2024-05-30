@@ -18,12 +18,21 @@
                 <?php echo "<p>$error_message</p>";?>
             <?php } else { ?>
                 <?php // Display a default error message ?>
-                <?php echo "<p>There was an error verifying your email. Please make sure you followed the correct verification link.</p>"; ?>
+                <?php echo "<p>There was an error verifying your email. Please make sure you input the correct verification code.</p>"; ?>
             <?php }?>
             </div>
+            
+            <?php 
+                // Retrieve the email value from the URL if it exists
+                $Email = isset($_GET['email']) ? $_GET['email'] : '';
+
+                // Debug: Output the retrieved email for testing
+                echo "Retrieved Email: $Email";
+            ?>
+
 
             <div class="form-group">
-                <a href="VerifyEmail.php" class="btn btn-primary">Try Again</a>
+                <a href="VerifyEmail.php?email=<?php echo urlencode($Email); ?>" class="btn btn-primary">Try Again</a>
             </div>
         </form>
     </div>

@@ -10,8 +10,8 @@
     </head>
     <body>  
         <div class="container">
-            <!-- Form for user login, submits data to home.php using POST method -->
-            <form action="home.php" method="post" class="mt-5">
+            <!-- Form for user login, submits data to CreateAccountCode.php using POST method -->
+            <form action="CreateAccountCode.php" method="post" class="mt-5">
 
                 <h2 class="mb-4">Terms & Conditions</h2>
                 <p class="text-center">Providing our Service requires collecting and using your information.</p>

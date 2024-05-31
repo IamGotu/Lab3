@@ -40,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     // Redirect the user if they try to access this page directly
     header("Location: VerifyEmail.php?email=$email&error=You cannot access this site directly");
-    echo 'You cannot access this site directly';
     exit();
 }
 

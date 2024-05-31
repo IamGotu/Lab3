@@ -15,6 +15,13 @@
 
             <h2 class="mb-4">LOGIN</h2>
 
+            <?php
+                if (isset($_GET['success'])) {
+                    // Display the success message
+                    echo htmlspecialchars($_GET['success']);
+                }
+            ?>
+
             <!-- Check if the 'error' parameter is set in the URL and display error message-->
             <?php if (isset($_GET['error'])) { ?>
                 <p class="text-danger"><?php echo $_GET['error']; ?></p>

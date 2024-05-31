@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2024 at 04:10 PM
+-- Generation Time: May 31, 2024 at 07:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,15 +40,6 @@ CREATE TABLE `user` (
   `verify_token` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`user_id`, `username`, `password`, `Lastname`, `First_name`, `Middle_name`, `Email`, `Status`, `Active`, `verify_token`) VALUES
-(61, 'john', 'john', 'jopia', 'mark', 'john', 'markjohnjopia1@gmail.com', 'Verified', 'Not Active', 'e0961aa73a7a7995c8277612f9f4ab7f'),
-(62, 'john1', 'john', 'john', 'john', 'john', 'john@gmail.com', 'Not Verified', 'Not Active', 'ab70d2ceaef085f07e8281bf3295d827'),
-(63, 'jopson', 'jopson', 'jopson', 'jopson', 'jopson', 'jopson@gmail.com', 'Not Verified', 'Not Active', '18e4e460f814481720d24969bde30eb5');
-
 -- --------------------------------------------------------
 
 --
@@ -68,13 +59,6 @@ CREATE TABLE `user_profile` (
   `created_at` date NOT NULL,
   `verify_token` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `user_profile`
---
-
-INSERT INTO `user_profile` (`user_id`, `full_name`, `email`, `phone_number`, `address`, `password`, `profile_picture`, `Status`, `Active`, `created_at`, `verify_token`) VALUES
-(7, 'Mark John Jopia', 'markjohnjopia1@gmail.com', 0, '', '12345', 'boxed-bg.jpg', '', '', '0000-00-00', '');
 
 --
 -- Indexes for dumped tables
@@ -102,7 +86,7 @@ ALTER TABLE `user_profile`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `user_profile`

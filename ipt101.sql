@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2024 at 07:29 AM
+-- Generation Time: Jun 04, 2024 at 07:20 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -49,16 +49,24 @@ CREATE TABLE `user` (
 CREATE TABLE `user_profile` (
   `user_id` int(11) NOT NULL,
   `full_name` varchar(45) NOT NULL,
+  `birthdate` date NOT NULL,
   `email` varchar(45) NOT NULL,
-  `phone_number` int(11) NOT NULL,
+  `phone_number` varchar(45) NOT NULL,
   `address` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   `profile_picture` text NOT NULL,
   `Status` varchar(45) NOT NULL,
   `Active` varchar(45) NOT NULL,
-  `created_at` date NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `verify_token` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_profile`
+--
+
+INSERT INTO `user_profile` (`user_id`, `full_name`, `birthdate`, `email`, `phone_number`, `address`, `password`, `profile_picture`, `Status`, `Active`, `created_at`, `verify_token`) VALUES
+(20, 'Mark John Jopia', '2010-01-04', 'markjohnjopia1@gmail.com', '09514810354', 'Sinawal GSC', '12345', '1341032.png', 'Verified', 'Online', '2024-06-03 17:52:03', '4e0c');
 
 --
 -- Indexes for dumped tables
@@ -92,7 +100,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user_profile`
 --
 ALTER TABLE `user_profile`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

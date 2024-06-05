@@ -10,10 +10,17 @@
 
     <div class="container">
         
-        <!-- Form for user login, submits data to index.php using POST method -->
-        <form action="index.php" method="post" class="mt-5">
+        <!-- Form for user login, submits data to LoginCode.php using POST method -->
+        <form action="LoginCode.php" method="post" class="mt-5">
 
             <h2 class="mb-4">LOGIN</h2>
+
+            <?php
+                if (isset($_GET['success'])) {
+                    // Display the success message
+                    echo htmlspecialchars($_GET['success']);
+                }
+            ?>
 
             <!-- Check if the 'error' parameter is set in the URL and display error message-->
             <?php if (isset($_GET['error'])) { ?>

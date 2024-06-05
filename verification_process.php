@@ -24,22 +24,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Update the user's record to mark them as verified
         $update_sql = "UPDATE user SET Status='Verified' WHERE Email='$email' AND verify_token='$verification_code'";
         if (mysqli_query($conn, $update_sql)) {
-            // Redirect the user to a page indicating successful verification
-            header("Location: verification_success.php");
-            exit();
+            // Redirect to Loginform.php with a success message
+            header("Location: Loginform.php?success=you have successfully verified");
+               exit();
         } else {
             // Display an error message if the update fails
-            header("Location: verification_error.php?message=Error updating record");
+            header("Location: VerifyEmail.php?email=$email&error=Verification failed, please try again");
             exit();
         }
     } else {
         // Redirect the user to a page indicating invalid verification code
-        header("Location: verification_error.php?message=Invalid verification code");
+        header("Location: VerifyEmail.php?email=$email&error=Invalid verification code, please try again");
         exit();
     }
 } else {
     // Redirect the user if they try to access this page directly
-    header("Location: verification_error.php?message=Invalid request");
+    header("Location: VerifyEmail.php?email=$email&error=You cannot access this site directly");
     exit();
 }
 

@@ -115,5 +115,10 @@ if (
     }
 
     mysqli_close($conn);
+} else {
+    // Redirect the user if they try to access this page directly
+    header("Location: CreateAccount.php?error=You cannot access this site directly");
+    echo 'You cannot access this site directly';
+    exit();
 }
 ?>
